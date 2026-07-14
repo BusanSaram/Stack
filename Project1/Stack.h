@@ -7,7 +7,7 @@ using namespace std;
 class Stack
 {
 private:
-	int data[MaxCount] = {};
+	int* data;
 	int index = 0;
 public:
 	void Clear(); // 모두 초기화
