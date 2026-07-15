@@ -1,4 +1,4 @@
 .vs/
-.log
+*.log
 Debug/
 x64/
