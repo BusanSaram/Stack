@@ -1,15 +1,32 @@
 #include "Stack.h"
 
+Stack::Stack(int _capacity)
+{
+	capacity = _capacity;
+	data = new int[capacity];
+	index = 0;
+}
+
+Stack::~Stack()
+{
+	delete[] data;
+}
+
+void Stack::Resize()
+{
+	int newCapacity = capacity * 2;
+	int* newData = new int[newCapacity];
+	for (int i = 0; i < index; i++) {
+		newData[i] = data[i];
+	}
+	delete[] data;
+	data = newData;
+	capacity = newCapacity;
+}
+
 void Stack::Clear()
 {
-	if (index == 0) {
-		return;
-	}
-	else {
-		for(int i = index; i > 0; i--) {
-			data[i] = 0;
-		}
-	}
+	index = 0;
 }
 
 int Stack::Count()
@@ -29,21 +46,17 @@ bool Stack::IsEmpty()
 
 bool Stack::Push(int _data)
 {
-	if (index == MaxCount) {
-		return false;
+	if (index == capacity) {
+		Resize();
 	}
-	else {
-		data[index] = _data;
-		index++;
-	}
-	
+	data[index] = _data;
+	index++;
 	return true;
 }
 
 void Stack::Pop()
 {
 	if (index != 0) {
-		data[index] = 0;
 		index--;
 	}
 }
@@ -61,10 +74,3 @@ void Stack::Print()
 	}
 }
 
-Stack::Stack()
-{
-}
-
-Stack::~Stack()
-{
-}

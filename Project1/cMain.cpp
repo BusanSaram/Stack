@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-	Stack stack;
+	Stack stack(1);
 	cout <<"\nisEmpty? " << stack.IsEmpty() << endl;
 	stack.Push(1);
 	stack.Print();
