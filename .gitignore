@@ -1,4 +1,16 @@
-.vs/
+# 빌드 결과물 폴더 전체 무시
 x64/
-*.log
+Project1/x64/
 Debug/
+Release/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.log
+*.tlog/
+*.idb
+
+# Visual Studio 관련
+.vs/
+*.vcxproj.user
