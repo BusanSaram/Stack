@@ -2,14 +2,11 @@
 
 void Stack::Clear()
 {
-	if (index == 0) {
-		return;
-	}
-	else {
-		for(int i = index; i > 0; i--) {
+		for(int i = 0; i < index; i++) {
 			data[i] = 0;
 		}
-	}
+		index = 0;
+
 }
 
 int Stack::Count()
@@ -29,22 +26,19 @@ bool Stack::IsEmpty()
 
 bool Stack::Push(int _data)
 {
-	if (index == MaxCount) {
-		return false;
-	}
-	else {
+	if (index < MaxCount) {
 		data[index] = _data;
 		index++;
+		return true;
 	}
-	
-	return true;
+	return false;
 }
 
 void Stack::Pop()
 {
 	if (index != 0) {
-		data[index] = 0;
 		index--;
+		data[index] = 0;   // 이제 index는 유효 범위 안 (0 ~ MaxCount-1)
 	}
 }
 
@@ -53,13 +47,6 @@ int Stack::Top()
 	return data[index-1];
 }
 
-void Stack::Print()
-{
-	cout << "\nStack" << endl;
-	for(int i = 0; i< index; i++){
-		cout<< data[i] << endl;
-	}
-}
 
 Stack::Stack()
 {
