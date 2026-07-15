@@ -2,13 +2,13 @@
 #include <iostream>
 using namespace std;
 
-#define MaxCount 5 
-
 class Stack
 {
 private:
 	int* data;
-	int index = 0;
+	int index;
+	int capacity;
+	void Resize();
 public:
 	void Clear(); // 모두 초기화
 	int Count(); // 현재 stack에 쌓여진 데이터 개수 
@@ -18,7 +18,7 @@ public:
 	int Top(); // 맨위 값을 반환
 	void Print(); // stack에 쌓여진 데이터 출력
 public:
-	Stack(); // 생성자 
+	Stack(int _capacity); // 생성자 
 	~Stack(); //소멸자
 };
 
