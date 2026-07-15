@@ -2,11 +2,15 @@
 
 void Stack::Clear()
 {
-		for(int i = 0; i < index; i++) {
+	if (index == 0) {
+		return;
+	}
+	else {
+		for(int i = index; i > 0; i--) {
 			data[i] = 0;
 		}
 		index = 0;
-
+	}
 }
 
 int Stack::Count()
@@ -26,19 +30,21 @@ bool Stack::IsEmpty()
 
 bool Stack::Push(int _data)
 {
-	if (index < MaxCount) {
+	if (index == MaxCount) {
+		return false;
+	}
+	else {
 		data[index] = _data;
 		index++;
-		return true;
 	}
-	return false;
+	return true;
 }
 
 void Stack::Pop()
 {
 	if (index != 0) {
 		index--;
-		data[index] = 0;   // 이제 index는 유효 범위 안 (0 ~ MaxCount-1)
+		data[index] = 0;
 	}
 }
 
