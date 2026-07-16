@@ -1,48 +1,37 @@
 #include "Stack.h"
-using namespace std;
 
 int main() {
-	Stack stack(1);
-	cout <<"\nisEmpty? " << stack.IsEmpty() << endl;
-	stack.Push(1);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(2);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(3);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	cout << "\ncount? " << stack.Count() << endl;
-	stack.Push(4);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(5);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	cout << "\nisEmpty? " << stack.IsEmpty() << endl;
-	stack.Clear();
-	stack.Print();
-	stack.Push(1);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(2);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(3);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	stack.Pop();
-	stack.Print();
 
-	cout << "\nisEmpty? " << stack.IsEmpty() << endl;
+	Stack stack;
+	for (int i = 0; i <= 5; i++)
+	{
+		if (stack.Push(i)) //0,1,2,3,4,
+		{
+			cout << i << endl;
+		}
+		else // 5
+		{
+			cout << i << endl;
+		}
+	}
+	//0,1,2,3,4,5
+	int num = stack.Top(); // 5
+	cout << num << endl;
+	stack.Pop();
+
+	num = stack.Top(); // 4
+	cout << num <<  endl;
+	stack.Pop();
+
+	num = stack.Count(); // 4개
+	cout << num << endl;
+
+	if (!stack.IsEmpty())// stack에 4개가 있어서 == true
+	{
+		stack.Clear(); // 자료 날라감
+	}
+
+	num = stack.Count(); // 0
+	cout << num << endl;
 	return 0;
 }
