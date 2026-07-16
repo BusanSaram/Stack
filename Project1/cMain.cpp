@@ -1,48 +1,21 @@
-#include "Stack.h"
+#include <iostream>
+#include <stack>
+
 using namespace std;
 
 int main() {
-	Stack stack(1);
-	cout <<"\nisEmpty? " << stack.IsEmpty() << endl;
-	stack.Push(1);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(2);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(3);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	cout << "\ncount? " << stack.Count() << endl;
-	stack.Push(4);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(5);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	cout << "\nisEmpty? " << stack.IsEmpty() << endl;
-	stack.Clear();
-	stack.Print();
-	stack.Push(1);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(2);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Push(3);
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	cout << "\ntop? " << stack.Top() << endl;
-	stack.Pop();
-	stack.Print();
-	stack.Pop();
-	stack.Print();
+	
+	stack<int> numbers;
 
-	cout << "\nisEmpty? " << stack.IsEmpty() << endl;
+	numbers.push(1);
+	numbers.push(2);
+	numbers.push(3); // LIFO
+	
+	//그래서 top에서 나중에 들어온 순서대로 pop이 된다
+	for (int i = 0; i < 3; i++) {
+		cout << numbers.top() << endl;
+		numbers.pop();
+	}
+	
 	return 0;
 }
