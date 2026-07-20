@@ -1,1 +1,7 @@
-﻿  Project1.vcxproj -> C:\Users\MSI\Documents\C++\Project1\x64\Debug\Project1.exe
+﻿  Stack.cpp
+C:\Users\MSI\Documents\C++\Project1\Project1\Stack.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\MSI\Documents\C++\Project1\Project1\Stack.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+  (compiling source file 'Stack.cpp')
+  
+  LINK : C:\Users\MSI\Documents\C++\Project1\x64\Debug\Project1.exe not found or not built by the last incremental link; performing full link
+  Project1.vcxproj -> C:\Users\MSI\Documents\C++\Project1\x64\Debug\Project1.exe

@@ -14,6 +14,7 @@ void Stack::Clear()
 			data[i] = 0;
 		}
 		delete[] data;
+		data = nullptr;
 		index = 0;
 	}
 }
